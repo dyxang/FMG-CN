@@ -192,7 +192,7 @@ window.Markers = (function () {
     const burg = pack.burgs[cells.burg[cell]];
     const name = `${burg.name} — ${resource} 矿业小镇`;
     const population = rn(burg.population * populationRate * urbanization);
-    const legend = `${burg.name} 是一个 ${population} 人的矿业城镇，就在 ${resource} 矿附近`;
+    const legend = `${burg.name} 是一个 ${population} 人的矿业城市，就在 ${resource} 矿附近`;
     notes.push({id, name, legend});
   }
 

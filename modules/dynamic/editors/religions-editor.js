@@ -29,7 +29,7 @@ function insertEditorHtml() {
       <div data-tip="按宗教构成排序" class="sortable alphabetically hide" data-sortby="form">构成&nbsp;</div>
       <div data-tip="按至高神排序" class="sortable alphabetically hide" data-sortby="deity">至高神&nbsp;</div>
       <div data-tip="按宗教地区分类" class="sortable hide" data-sortby="area">地区&nbsp;</div>
-      <div data-tip="按信徒人数(宗教地区人口)排序" class="sortable hide" data-sortby="population">信众&nbsp;</div>
+      <div data-tip="按信徒人数(宗教地区人口)排序" class="sortable hide" data-sortby="population">信徒&nbsp;</div>
     </div>
     <div id="religionsBody" class="table" data-type="absolute"></div>
 

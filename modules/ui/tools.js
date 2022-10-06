@@ -143,9 +143,9 @@ function regenerateStates() {
 
   const statesCount = +regionsOutput.value;
   const burgs = pack.burgs.filter(b => b.i && !b.removed);
-  if (!burgs.length) return tip("没有任何要生成状态的城镇。请先创建成城镇", false, "error");
+  if (!burgs.length) return tip("没有任何要生成状态的城市。请先创建成城市", false, "error");
   if (burgs.length < statesCount)
-    tip(`没有足够的城镇产生 ${statesCount} 个国家. 将只生成 ${burgs.length} 个国家`, false, "warn");
+    tip(`没有足够的城市产生 ${statesCount} 个国家. 将只生成 ${burgs.length} 个国家`, false, "warn");
 
   // turn all old capitals into towns
   burgs

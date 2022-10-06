@@ -1,36 +1,36 @@
 import {rollups} from "../../../utils/functionUtils.js";
 
 const entitiesMap = {
-  states: {
-    label: "State",
+  states: {//不确定是否会对数据照成影响
+    label: "国家",
     getCellsData: () => pack.cells.state,
     getName: nameGetter("states"),
     getColors: colorsGetter("states"),
     landOnly: true
   },
   cultures: {
-    label: "Culture",
+    label: "文化",
     getCellsData: () => pack.cells.culture,
     getName: nameGetter("cultures"),
     getColors: colorsGetter("cultures"),
     landOnly: true
   },
   religions: {
-    label: "Religion",
+    label: "宗教",
     getCellsData: () => pack.cells.religion,
     getName: nameGetter("religions"),
     getColors: colorsGetter("religions"),
     landOnly: true
   },
   provinces: {
-    label: "Province",
+    label: "省份",
     getCellsData: () => pack.cells.province,
     getName: nameGetter("provinces"),
     getColors: colorsGetter("provinces"),
     landOnly: true
   },
   biomes: {
-    label: "Biome",
+    label: "生物群",
     getCellsData: () => pack.cells.biome,
     getName: biomeNameGetter,
     getColors: biomeColorsGetter,
@@ -40,7 +40,7 @@ const entitiesMap = {
 
 const quantizationMap = {
   total_population: {
-    label: "Total population",
+    label: "总人口",
     quantize: cellId => getUrbanPopulation(cellId) + getRuralPopulation(cellId),
     aggregate: values => rn(d3.sum(values)),
     formatTicks: value => si(value),
@@ -49,7 +49,7 @@ const quantizationMap = {
     landOnly: true
   },
   urban_population: {
-    label: "Urban population",
+    label: "城市人口",
     quantize: getUrbanPopulation,
     aggregate: values => rn(d3.sum(values)),
     formatTicks: value => si(value),
@@ -58,7 +58,7 @@ const quantizationMap = {
     landOnly: true
   },
   rural_population: {
-    label: "Rural population",
+    label: "农村人口",
     quantize: getRuralPopulation,
     aggregate: values => rn(d3.sum(values)),
     formatTicks: value => si(value),
@@ -67,7 +67,7 @@ const quantizationMap = {
     landOnly: true
   },
   area: {
-    label: "Land area",
+    label: "土地面积",
     quantize: cellId => getArea(pack.cells.area[cellId]),
     aggregate: values => rn(d3.sum(values)),
     formatTicks: value => `${si(value)} ${getAreaUnit()}`,
@@ -76,7 +76,7 @@ const quantizationMap = {
     landOnly: true
   },
   cells: {
-    label: "Number of cells",
+    label: "单元格数",
     quantize: () => 1,
     aggregate: values => d3.sum(values),
     formatTicks: value => value,
@@ -85,7 +85,7 @@ const quantizationMap = {
     landOnly: true
   },
   burgs_number: {
-    label: "Number of burgs",
+    label: "城市数量",
     quantize: cellId => (pack.cells.burg[cellId] ? 1 : 0),
     aggregate: values => d3.sum(values),
     formatTicks: value => value,
@@ -94,7 +94,7 @@ const quantizationMap = {
     landOnly: true
   },
   average_elevation: {
-    label: "Average elevation",
+    label: "平均海拔",
     quantize: cellId => pack.cells.h[cellId],
     aggregate: values => d3.mean(values),
     formatTicks: value => getHeight(value),
@@ -102,7 +102,7 @@ const quantizationMap = {
     stackable: false,
     landOnly: false
   },
-  max_elevation: {
+  max_elevation: {//翻译到此处
     label: "Maximum mean elevation",
     quantize: cellId => pack.cells.h[cellId],
     aggregate: values => d3.max(values),
@@ -219,7 +219,7 @@ export function open() {
   else charts.forEach(chart => renderChart(chart));
 
   $("#chartsOverview").dialog({
-    title: "Data Charts",
+    title: "数据图表",
     position: {my: "center", at: "center", of: "svg"},
     close: handleClose
   });
@@ -285,7 +285,7 @@ function insertHtml() {
   const html = /* html */ `<div id="chartsOverview" class="dialog stable">
     <form id="chartsOverview__form">
       <div>
-        <button data-tip="添加一个图表" type="submit">Plot</button>
+        <button data-tip="添加一个图表" type="submit">绘制</button>
 
         <select data-tip="选择实体(y 轴)" id="chartsOverview__entitiesSelect">
           ${createOptions(entities)}
@@ -297,7 +297,7 @@ function insertHtml() {
           </select>
         </label>
 
-        <label>grouped by
+        <label>分组
           <select data-tip="选择要分组的实体。如果不需要分组，请将其设置为与实体相同" id="chartsOverview__groupBySelect">
             ${createOptions(entities)}
           </select>
@@ -389,7 +389,7 @@ function renderChart({id, entity, plotBy, groupBy, sorting, type}) {
   const entityCells = getEntityCellsData();
   const groupCells = getGroupCellsData();
 
-  const title = `${capitalize(entity)} by ${plotByLabel}${noGrouping ? "" : " grouped by " + groupLabel}`;
+  const title = `${capitalize(entity)} by ${plotByLabel}${noGrouping ? "" : "分组" + groupLabel}`;
 
   const tooltip = (entity, group, value, percentage) => {
     const entityTip = `${entityLabel}: ${entity}`;

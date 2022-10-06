@@ -15,7 +15,7 @@ function editProvinces() {
   modules.editProvinces = true;
 
   $("#provincesEditor").dialog({
-    title: "省编辑",
+    title: "省编辑器",
     resizable: false,
     width: fitContent(),
     close: closeProvincesEditor,
@@ -266,7 +266,7 @@ function editProvinces() {
 
     if (provinceBurgs.some(b => burgs[b].capital))
       return tip("无法宣布有省会城市的独立。请先更改省会城市", false, "error");
-    if (!burgId) return tip("没有城镇就不能宣布独立", false, "error");
+    if (!burgId) return tip("没有城市就不能宣布独立", false, "error");
 
     const oldStateId = province.state;
     const newStateId = states.length;

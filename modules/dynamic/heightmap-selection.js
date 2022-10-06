@@ -152,7 +152,7 @@ function appendStyleSheet() {
 function insertHtml() {
   const heightmapSelectionHtml = /* html */ `<div id="heightmapSelection" class="dialog stable">
     <div class="heightmap-selection">
-      <section data-tip="选择高度图模板 - 模板可以在生成时提供独特但外观相似的映射">
+      <section data-tip="选择高度图模板 - 模板可以在生成时提供独特但外观相似的地图">
         <header><h1>高度图模板</h1></header>
         <div class="heightmap-selection_container"></div>
       </section>

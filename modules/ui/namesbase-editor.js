@@ -44,7 +44,7 @@ function editNamesbase() {
   updateInputs();
 
   $("#namesbaseEditor").dialog({
-    title: "Namesbase Editor",
+    title: "名称库编辑器",
     width: "auto",
     position: {my: "center", at: "center", of: "svg"}
   });
@@ -58,7 +58,7 @@ function editNamesbase() {
   function updateInputs() {
     const base = +document.getElementById("namesbaseSelect").value;
     if (!nameBases[base]) {
-      tip(`Namesbase ${base} is not defined`, false, "error");
+      tip(`名称库 ${base} 未定义`, false, "error");
       return;
     }
     document.getElementById("namesbaseTextarea").value = nameBases[base].b;
@@ -175,14 +175,14 @@ function editNamesbase() {
       <div data-tip="常见名称长度">中位名字长度: ${d3.median(wordsLength)}</div>
       <hr />
       <div data-tip="基本拉丁文以外的字符的字体支持很差">非基本字符: ${nonBasicLatinChars}</div>
-      <div data-tip="经常翻倍(超过3倍)的字符">双倍字符: ${doubled.join("")}</div>
-      <div data-tip="名字用了不止一次">复制品: ${duplicates}</div>
+      <div data-tip="经常翻倍(超过3倍)使用的字符">双倍字符: ${doubled.join("")}</div>
+      <div data-tip="名字多次使用">复制品: ${duplicates}</div>
       <div data-tip="包含空格字符的名称百分比">多个单词的名字: ${rn(multiwordRate * 100, 2)}%</div>
     </div>`;
 
     $("#alert").dialog({
       resizable: false,
-      title: "Data Analysis",
+      title: "数据分享",
       position: {my: "left top-30", at: "right+10 top", of: "#namesbaseEditor"},
       buttons: {
         OK: function () {

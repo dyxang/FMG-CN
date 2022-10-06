@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" href="images/icons/maskable_icon_x192.png" />
     <link rel="canonical" href="https://azgaar.github.io/Fantasy-Map-Generator/" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <script async defer data-website-id="29866d41-9524-4114-b846-a81a02d540d5" src="https://sakura.1inn.top/wasabi.js"></script>
+    <!--script async defer data-website-id="29866d41-9524-4114-b846-a81a02d540d5" src="https://sakura.1inn.top/wasabi.js"></script-->
 
     <!-- inline css for loading screen -->
     <style type="text/css">
@@ -650,7 +650,7 @@
             </li>
             <li
               id="toggleIcons"
-              data-tip="城镇图标: 单击以切换，拖动以升高或降低图层。按住Ctrl键并单击可编辑图层样式"
+              data-tip="城市图标: 单击以切换，拖动以升高或降低图层。按住Ctrl键并单击可编辑图层样式"
               data-shortcut="I"
               onclick="toggleIcons(event)"
             >
@@ -746,7 +746,7 @@
             <option value="anchors">锚图标</option>
             <option value="biomes">生物群系</option>
             <option value="borders">边界</option>
-            <option value="burgIcons">城镇图标</option>
+            <option value="burgIcons">城市图标</option>
             <option value="cells">单元格</option>
             <option value="coastline">海岸线</option>
             <option value="coordinates">坐标</option>
@@ -840,8 +840,8 @@
                 </td>
               </tr>
 
-              <tr data-tip="为城镇人口设置条形颜色">
-                <td>城镇色彩</td>
+              <tr data-tip="为城市人口设置条形颜色">
+                <td>城市色彩</td>
                 <td>
                   <input id="stylePopulationUrbanStrokeInput" type="color" value="#ff0000" />
                   <output id="stylePopulationUrbanStrokeOutput">#ff0000</output>
@@ -1359,8 +1359,8 @@
                 </td>
               </tr>
 
-              <tr data-tip="设置城镇徽大小乘数">
-                <td>城镇徽标大小</td>
+              <tr data-tip="设置城市徽大小乘数">
+                <td>城市徽标大小</td>
                 <td>
                   <input
                     id="emblemsBurgSizeInput"
@@ -1428,7 +1428,7 @@
             </tbody>
           </table>
 
-          <div id="mapFilters" data-tip="设置一个过滤器，通常应用于映射">
+          <div id="mapFilters" data-tip="设置一个过滤器，通常应用于地图">
             <p>切换全局筛选器：</p>
             <button id="grayscale" class="radio">灰度</button>
             <button id="sepia" class="radio">乌贼墨</button>
@@ -1438,7 +1438,7 @@
         </div>
 
         <div id="optionsContent" class="tabcontent">
-          <p data-tip="映射生成设置。生成一个新的映射来应用这些设置">
+          <p data-tip="地图生成设置。生成一个新的地图来应用这些设置">
             地图设置（要应用的新地图）：
           </p>
           <table>
@@ -1462,7 +1462,7 @@
               </td>
             </tr>
 
-            <tr data-tip="映射种子编号。只有当画布大小和选项相同时，种子才生成相同的映射">
+            <tr data-tip="地图种子编号。只有当画布大小和选项相同时，种子才生成相同的地图">
               <td>
                 <i
                   data-tip="显示种子历史记录以应用以前的种子"
@@ -1602,7 +1602,7 @@
               </td>
             </tr>
 
-            <tr data-tip="定义城镇百分比，形成一个单独的省份">
+            <tr data-tip="定义城市百分比，形成一个单独的省份">
               <td>
                 <i data-locked="0" id="lock_provinces" class="icon-lock-open"></i>
               </td>
@@ -1641,11 +1641,11 @@
               </td>
             </tr>
 
-            <tr data-tip="确定一定数量的城镇(如果有足够的合适的土地)">
+            <tr data-tip="确定一定数量的城市(如果有足够的合适的土地)">
               <td>
                 <i data-locked="0" id="lock_manors" class="icon-lock-open"></i>
               </td>
-              <td>城镇数量</td>
+              <td>城市数量</td>
               <td>
                 <input id="manorsInput" data-stored="manors" type="range" min="0" max="1000" step="1" value="1000" />
               </td>
@@ -1948,7 +1948,7 @@
               文化
             </button>
             <button id="editNamesBaseButton" data-tip="点击打开Namesbase编辑器" data-shortcut="Shift + N">
-              名字库
+              名称库
             </button>
             <button id="editZonesButton" data-tip="点击打开Zones编辑器" data-shortcut="Shift + Z">区域</button>
             <button id="editReligions" data-tip="点击打开Religions编辑器" data-shortcut="Shift + R">
@@ -1971,7 +1971,7 @@
             图表
             </button>
             <button id="overviewBurgsButton" data-tip="点击打开Burgs 预览" data-shortcut="Shift + T">
-              城镇
+              城市
             </button>
             <button id="overviewRiversButton" data-tip="点击打开Rivers 预览" data-shortcut="Shift + V">
               河流
@@ -2014,7 +2014,7 @@
             </button>
             <button
               id="regenerateStates"
-              data-tip="单击以选择新首都并重新生成状态。徽章和军事力量也将重生，城镇将保持原样"
+              data-tip="单击以选择新首都并重新生成状态。徽章和军事力量也将重生，城市将保持原样"
             >
             国家
             </button>
@@ -2023,9 +2023,9 @@
             </button>
             <button
               id="regenerateBurgs"
-              data-tip="单击此处可重新生成所有解锁的城镇和路。各州将保持现状。注意: 只有在有文化指定的人口密集地区才会产生城市"
+              data-tip="单击此处可重新生成所有解锁的城市和路。各州将保持现状。注意: 只有在有文化指定的人口密集地区才会产生城市"
             >
-              城镇
+              城市
             </button>
             <button id="regenerateEmblems" data-tip="点击重新生成所有标志">徽标</button>
             <button id="regenerateReligions" data-tip="点击重生宗教">宗教</button>
@@ -2052,10 +2052,10 @@
           <div id="addFeature">
             <button
               id="addBurgTool"
-              data-tip="点击地图放置一个城镇。 按住 Shift 添加多个"
+              data-tip="点击地图放置一个城市。 按住 Shift 添加多个"
               data-shortcut="Shift + 1"
             >
-              城镇
+              城市
             </button>
             <button
               id="addLabel"
@@ -2296,10 +2296,10 @@
         </div>
 
         <div id="sticked">
-          <button id="newMapButton" data-tip="根据选项生成新的映射" data-shortcut="F2">新建地图</button>
+          <button id="newMapButton" data-tip="根据选项生成新的地图" data-shortcut="F2">新建地图</button>
           <button id="exportButton" data-tip="选择下载图像或导出地图数据的格式">导出</button>
           <button id="saveButton" data-tip="以.map 格式保存全功能 map">保存</button>
-          <button id="loadButton" data-tip="以.map 格式加载全功能映射">载入</button>
+          <button id="loadButton" data-tip="以.map 格式加载全功能地图">载入</button>
           <button id="zoomReset" data-tip="重置地图放大" data-shortcut="0 (zero)">重设缩放</button>
         </div>
       </div>
@@ -3091,7 +3091,7 @@
       <div id="burgEditor" class="dialog" style="display: none">
         <div id="burgBody" style="padding-bottom: 0.3em">
           <div style="display: flex; align-items: center">
-            <svg data-tip="城镇徽标。点击编辑" class="pointer" viewBox="0 0 200 200" width="13em" height="13em">
+            <svg data-tip="城市徽标。点击编辑" class="pointer" viewBox="0 0 200 200" width="13em" height="13em">
               <use id="burgEmblem"></use>
             </svg>
             <div style="display: grid; grid-auto-rows: minmax(1.6em, auto)">
@@ -3101,7 +3101,7 @@
                 <div class="label">名称：</div>
                 <input
                   id="burgName"
-                  data-tip="输入重命名城镇"
+                  data-tip="输入重命名城市"
                   autocorrect="off"
                   spellcheck="false"
                   style="width: 8em"
@@ -3109,12 +3109,12 @@
                 <span data-tip="说出名字。您可以在选项中更改语音和语言" class="speaker">🔊</span>
                 <span
                   id="burgNameReRandom"
-                  data-tip="为城镇生成随机名称"
+                  data-tip="为城市生成随机名称"
                   class="icon-globe pointer"
                 ></span>
               </div>
 
-              <div data-tip="选择城镇类型。对会徽生成有轻微影响">
+              <div data-tip="选择城市类型。对会徽生成有轻微影响">
                 <div class="label">Type:</div>
                 <select id="burgType" style="width: 8em">
                   <option value="Generic">通用</option>
@@ -3132,12 +3132,12 @@
                 <select id="burgCulture" style="width: 8em"></select>
                 <span
                   id="burgNameReCulture"
-                  data-tip="为城镇生成特定于文化的名称"
+                  data-tip="为城市生成特定于文化的名称"
                   class="icon-book pointer"
                 ></span>
               </div>
 
-              <div data-tip="设置城镇人口">
+              <div data-tip="设置城市人口">
                 <div class="label">人口:</div>
                 <input id="burgPopulation" type="number" min="0" step="1" style="width: 8em" />
               </div>
@@ -3146,64 +3146,64 @@
                 <div class="label">特点:</div>
                 <span
                   id="burgCapital"
-                  data-tip="显示该城镇是否为国家首府。单击可切换"
+                  data-tip="显示该城市是否为国家首府。单击可切换"
                   data-feature="capital"
                   class="burgFeature icon-star"
                 ></span>
                 <span
                   id="burgPort"
-                  data-tip="显示城镇是否为港口。单击可切换"
+                  data-tip="显示城市是否为港口。单击可切换"
                   data-feature="port"
                   class="burgFeature icon-anchor"
                 ></span>
                 <span
                   id="burgCitadel"
-                  data-tip="显示城镇是否有城城镇。点击切换"
+                  data-tip="显示城市是否有城城市。点击切换"
                   data-feature="citadel"
                   class="burgFeature icon-chess-rook"
                   style="font-size: 1.1em"
                 ></span>
                 <span
                   id="burgWalls"
-                  data-tip="显示城镇是否有围墙，点击切换"
+                  data-tip="显示城市是否有围墙，点击切换"
                   data-feature="walls"
                   class="burgFeature icon-fort-awesome"
                 ></span>
                 <span
                   id="burgPlaza"
-                  data-tip="显示城镇是否是一个贸易中心(有大的市场)。点击切换"
+                  data-tip="显示城市是否是一个贸易中心(有大的市场)。点击切换"
                   data-feature="plaza"
                   class="burgFeature icon-store"
                   style="font-size: 1em"
                 ></span>
                 <span
                   id="burgTemple"
-                  data-tip="显示城镇是否为宗教中心。单击可切换"
+                  data-tip="显示城市是否为宗教中心。单击可切换"
                   data-feature="temple"
                   class="burgFeature icon-chess-bishop"
                   style="font-size: 1.1em; margin-left: 3px"
                 ></span>
                 <span
                   id="burgShanty"
-                  data-tip="显示城镇是否有棚户区。单击可切换"
+                  data-tip="显示城市是否有棚户区。单击可切换"
                   data-feature="shanty"
                   class="burgFeature icon-campground"
                   style="font-size: 1em"
                 ></span>
               </div>
 
-              <div data-tip="城镇年平均气温与现实世界城镇进行比较">
+              <div data-tip="城市年平均气温与现实世界城市进行比较">
                 <div class="label">温度：</div>
                 <span id="burgTemperature"></span>，就像
                 <span id="burgTemperatureLikeIn"></span>
                 <i
                   id="burgTemperatureGraph"
-                  data-tip="显示城镇的温度图"
+                  data-tip="显示城市的温度图"
                   class="icon-chart-area pointer"
                 ></i>
               </div>
 
-              <div data-tip="城镇高度高于平均海平面">
+              <div data-tip="城市高度高于平均海平面">
                 <div class="label">高度:</div>
                 <span id="burgElevation"></span> 海平面以上
               </div>
@@ -3212,7 +3212,7 @@
 
           <div
             id="mfcgPreviewSection"
-            data-tip="中世纪幻想城镇生成器中的城镇预览。默认种子是地图种子和城镇 ID 的组合"
+            data-tip="中世纪幻想城市生成器中的城市预览。默认种子是地图种子和城市 ID 的组合"
             style="display: flex; flex-direction: column"
           >
             <div>
@@ -3228,7 +3228,7 @@
               </div><!-- 校对到此处-->
               <i
                 id="addCustomMFCGBurgLink"
-                data-tip="提供到城镇地图的自定义链接"
+                data-tip="提供到城市地图的自定义链接"
                 class="icon-pencil pointer"
                 style="margin-left: 0.1em"
               ></i>
@@ -3245,11 +3245,11 @@
             <input
               id="burgInputGroup"
               placeholder="新的组别名称"
-              data-tip="为城镇创建新的组"
+              data-tip="为城市创建新的组"
               style="display: none; width: 10em"
             />
             <i id="burgAddGroup" data-tip="为城市建立新的组" class="icon-plus pointer"></i>
-            <i id="burgRemoveGroup" data-tip="删除选定的城镇组" class="icon-trash pointer"></i>
+            <i id="burgRemoveGroup" data-tip="删除选定的城市组" class="icon-trash pointer"></i>
           </div>
 
           <button id="burgStyleShow" data-tip="显示样式编辑部分" class="icon-brush"></button>
@@ -3257,25 +3257,25 @@
             <button id="burgStyleHide" data-tip="隐藏样式编辑部分" class="icon-brush"></button>
             <button
               id="burgEditLabelStyle"
-              data-tip="编辑标签风格在风格的城镇组编辑器"
+              data-tip="编辑标签风格在风格的城市组编辑器"
               class="icon-font"
             ></button>
             <button
               id="burgEditIconStyle"
-              data-tip="编辑风格图标为城镇组的风格编辑器"
+              data-tip="编辑风格图标为城市组的风格编辑器"
               class="icon-dot-circled"
             ></button>
             <button
               id="burgEditAnchorStyle"
-              data-tip="在 Style 中编辑城镇组的端口图标(锚)样式编辑器"
+              data-tip="在 Style 中编辑城市组的端口图标(锚)样式编辑器"
               class="icon-anchor"
             ></button>
           </div>
 
           <button id="burgEditEmblem" data-tip="编辑徽章" class="icon-shield-alt"></button>
           <button id="burgToggleMFCGMap" data-tip="切换 MFCG 地图" class="icon-map"></button>
-          <button id="burgRelocate" data-tip="重新安置城镇区" class="icon-target"></button>
-          <button id="burglLegend" data-tip="编辑免费的文字说明(图例)为这个城镇" class="icon-edit"></button>
+          <button id="burgRelocate" data-tip="重新安置城市区" class="icon-target"></button>
+          <button id="burglLegend" data-tip="编辑免费的文字说明(图例)为这个城市" class="icon-edit"></button>
           <button id="burgLock" class="icon-lock-open" onmouseover="showElementLockTip(event)"></button>
           <button
             id="burgRemove"
@@ -3336,14 +3336,14 @@
               <option value="square">正方形</option>
               <option value="squarish">方形</option>
               <option value="diamond">菱形</option>
-              <option value="hex">Hex</option>
-              <option value="hexy">Hexy</option>
-              <option value="shieldy">Shieldy</option>
-              <option value="shield">Shield</option>
+              <option value="hex">正六边形</option>
+              <option value="hexy">六边形</option>
+              <option value="shieldy">盾形</option>
+              <option value="shield">盾牌</option>
               <option value="pentagon">五边形</option>
               <option value="heptagon">七边形</option>
               <option value="circle">转圈</option>
-              <option value="no">否</option>
+              <option value="no">无</option>
             </select>
           </div>
 
@@ -3479,12 +3479,12 @@
               class="icon-button-bombardment"
             ></button>
             <button
-              data-tip="攻击阶段，攻击敌人的城镇，近战单位优先"
+              data-tip="攻击阶段，攻击敌人的城市，近战单位优先"
               data-phase="storming"
               class="icon-button-storming"
             ></button>
             <button
-              data-tip="掠夺阶段。掠夺城镇。单位强度增加"
+              data-tip="掠夺阶段。掠夺城市。单位强度增加"
               data-phase="looting"
               class="icon-button-looting"
             ></button>
@@ -3502,7 +3502,7 @@
               class="icon-button-sheltering"
             ></button>
             <button
-              data-tip="出击阶段，从被包围的城镇出击，近战单位优先"
+              data-tip="出击阶段，从被包围的城市出击，近战单位优先"
               data-phase="sortie"
               class="icon-button-sortie"
             ></button>
@@ -3706,7 +3706,7 @@
               class="icon-button-field"
             ></button>
             <button data-tip="海战: 海军单位作战" data-type="naval" class="icon-button-naval"></button>
-            <button data-tip="包围: 城镇垒封锁和风暴" data-type="siege" class="icon-button-siege"></button>
+            <button data-tip="包围: 城市垒封锁和风暴" data-type="siege" class="icon-button-siege"></button>
             <button data-tip="伏击: 突袭" data-type="ambush" class="icon-button-ambush"></button>
             <button data-tip="登陆: 两栖攻击" data-type="landing" class="icon-button-landing"></button>
             <button
@@ -4571,7 +4571,7 @@
           ></textarea>
 
           <div>
-            <span>Name: </span>
+            <span>库名: </span>
             <input
               id="namesbaseName"
               data-tip="键入以更改库名称"
@@ -4583,10 +4583,10 @@
             <span>长度: </span>
             <input id="namesbaseMin" data-tip="建议的最小名称长度" type="number" min="2" max="100" />
             <input id="namesbaseMax" data-tip="建议的最大名称长度" type="number" min="2" value="10" />
-            <span>翻倍: </span>
+            <span>二倍: </span>
             <input
               id="namesbaseDouble"
-              data-tip="填充可以在一行中使用两次的字母(双子)"
+              data-tip="填充可以在一行中使用两次的字母(二次)"
               autocorrect="off"
               spellcheck="false"
               style="width: 10em"
@@ -4749,8 +4749,8 @@
             <div class="label">省份:</div>
             <select id="emblemProvinces"></select>
           </div>
-          <div data-tip="在省或州选择城镇">
-            <div class="label">城镇:</div>
+          <div data-tip="在省或州选择城市">
+            <div class="label">城市:</div>
             <select id="emblemBurgs"></select>
           </div>
           <hr />
@@ -5061,8 +5061,8 @@
             />
           </div>
 
-          <div data-tip="设定城镇化率: 城镇人口相对于所有人口">
-            <div>城镇化率:</div>
+          <div data-tip="设定城市化率: 城市人口相对于所有人口">
+            <div>城市化率:</div>
             <input
               id="urbanizationOutput"
               data-stored="urbanization"
@@ -5083,8 +5083,8 @@
             />
           </div>
 
-          <div data-tip="设置城镇密度: 中世纪幻想城镇生成器中每座建筑的平均人口">
-            <div>城镇密度:</div>
+          <div data-tip="设置城市密度: 中世纪幻想城市生成器中每座建筑的平均人口">
+            <div>城市密度:</div>
             <input
               id="urbanDensityOutput"
               data-stored="urbanDensity"
@@ -5138,11 +5138,11 @@
       <div id="burgs预览" class="dialog stable" style="display: none">
         <div id="burgsHeader" class="header" style="grid-template-columns: 8em 6em 6em 7em 7em 4em 2em">
           <div
-            data-tip="单击此处可按城镇名进行排序"
+            data-tip="单击此处可按城市名进行排序"
             class="sortable alphabetically icon-sort-name-up"
             data-sortby="name"
           >
-          城镇&nbsp;
+          城市&nbsp;
           </div>
           <div data-tip="单击以按省名排序" class="sortable alphabetically" data-sortby="province">
             省&nbsp;
@@ -5153,14 +5153,14 @@
           <div data-tip="单击此处可按文化名称排序" class="sortable alphabetically" data-sortby="culture">
             文化&nbsp;
           </div>
-          <div data-tip="按城镇人口排序" class="sortable" data-sortby="population">
+          <div data-tip="按城市人口排序" class="sortable" data-sortby="population">
             人口&nbsp;
           </div>
-          <div data-tip="单击此处可按城镇类型进行排序" class="sortable alphabetically" data-sortby="type">Type&nbsp;</div>
+          <div data-tip="单击此处可按城市类型进行排序" class="sortable alphabetically" data-sortby="type">Type&nbsp;</div>
           <div
             id="burgsInvertLock"
             style="color: #6e5e66"
-            data-tip="单击此处可为所有城镇反转锁定"
+            data-tip="单击此处可为所有城市反转锁定"
             class="icon-lock pointer"
           ></div>
         </div>
@@ -5175,8 +5175,8 @@
         </div>
 
         <div id="burgsFooter" class="totalLine">
-          <div data-tip="城镇展示" style="margin-left: 4px">
-            城镇:&nbsp;<span id="burgsFooterBurgs">0</span>
+          <div data-tip="城市展示" style="margin-left: 4px">
+            城市:&nbsp;<span id="burgsFooterBurgs">0</span>
           </div>
           <div data-tip="平均人口" style="margin-left: 14px">
             平均人口:&nbsp;<span id="burgsFooterPopulation">0</span>
@@ -5185,23 +5185,23 @@
 
         <div id="burgsBottom">
           <button id="burgsOverviewRefresh" data-tip="刷新编辑器" class="icon-cw"></button>
-          <button id="burgsChart" data-tip="显示城镇气泡图" class="icon-chart-area"></button>
+          <button id="burgsChart" data-tip="显示城市气泡图" class="icon-chart-area"></button>
           <button
             id="regenerateBurgNames"
-            data-tip="根据分配的文化重新生成城镇名"
+            data-tip="根据分配的文化重新生成城市名"
             class="icon-retweet"
           ></button>
-          <button id="addNewBurg" data-tip="添加一个新的城镇。按住 Shift 添加多个" class="icon-plus"></button>
+          <button id="addNewBurg" data-tip="添加一个新的城市。按住 Shift 添加多个" class="icon-plus"></button>
           <button
             id="burgsExport"
             data-tip="将与 burgs 相关的数据保存为文本文件(. csv)"
             class="icon-download"
           ></button>
-          <button id="burgNamesImport" data-tip="批量重命名城镇" class="icon-upload"></button>
-          <button id="burgsLockAll" data-tip="锁定或解锁所有的城镇" class="icon-lock"></button>
+          <button id="burgNamesImport" data-tip="批量重命名城市" class="icon-upload"></button>
+          <button id="burgsLockAll" data-tip="锁定或解锁所有的城市" class="icon-lock"></button>
           <button
             id="burgsRemoveAll"
-            data-tip="移除除首都以外所有未上锁的城镇。移除首都首先移除其状态"
+            data-tip="移除除首都以外所有未上锁的城市。移除首都首先移除其状态"
             class="icon-trash"
           ></button>
         </div>
@@ -5553,7 +5553,7 @@
         <p><b>省份:</b> <span id="infoProvince">n/a</span></p>
         <p><b>文化:</b> <span id="infoCulture">n/a</span></p>
         <p><b>宗教:</b> <span id="infoReligion">n/a</span></p>
-        <p><b>城镇:</b> <span id="infoBurg">n/a</span></p>
+        <p><b>城市:</b> <span id="infoBurg">n/a</span></p>
       </div>
 
       <div id="iconSelector" style="display: none" class="dialog">
@@ -5915,7 +5915,7 @@
           要复制的数据: 高度图，生物群落，宗教，人口，降水，文化，州，省，军事
         </p>
         <p>待更新的数据: 区域、道路、河流</p>
-        <p>城镇可能重新地图错误，需要手动更改</p>
+        <p>城市可能重新地图错误，需要手动更改</p>
 
         <p>保存数据:</p>
         <div data-tip="锁定从原始地图复制的所有标记">
@@ -5924,7 +5924,7 @@
         </div>
         <div data-tip="锁定从原始地图复制的所有城堡">
           <input id="submapLockBurgs" class="checkbox" type="checkbox" checked />
-          <label for="submapLockBurgs" class="checkbox-label">城镇</label>
+          <label for="submapLockBurgs" class="checkbox-label">城市</label>
         </div>
 
         <p>实验特性:</p>
@@ -5936,9 +5936,9 @@
           <input id="submapRescaleStyles" class="checkbox" type="checkbox" checked />
           <label for="submapRescaleStyles" class="checkbox-label">缩放样式</label>
         </div>
-        <div data-tip="将所有现有的城镇转移到“大都市”">
+        <div data-tip="将所有现有的城市转移到“大都市”">
           <input id="submapPromoteTowns" class="checkbox" type="checkbox" />
-          <label for="submapPromoteTowns" class="checkbox-label">把城镇发展成大城镇</label>
+          <label for="submapPromoteTowns" class="checkbox-label">把城市发展成大城市</label>
         </div>
         <div data-tip="在洼地中增加湖泊(在大陆上可能非常缓慢)">
           <input id="submapAddLakeInDepression" class="checkbox" type="checkbox" />

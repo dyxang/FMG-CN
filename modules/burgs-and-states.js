@@ -155,7 +155,7 @@ window.BurgsAndStates = (function () {
       }
 
       if (manorsInput.value != 1000 && burgsAdded < desiredNumber) {
-        ERROR && console.error(`不能放置所有的城镇. 要求 ${desiredNumber}, 放置 ${burgsAdded}`);
+        ERROR && console.error(`不能放置所有的城市. 要求 ${desiredNumber}, 放置 ${burgsAdded}`);
       }
 
       burgs[0] = {name: undefined}; // do not store burgsTree anymore

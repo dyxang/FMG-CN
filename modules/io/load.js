@@ -485,7 +485,7 @@ async function parseLoadedData(data) {
       invalidBurgs.forEach(b => {
         const invalidCells = cells.i.filter(i => cells.burg[i] === b);
         invalidCells.forEach(i => (cells.burg[i] = 0));
-        ERROR && console.error("数据完整性检查. 无效城镇", b, "被分配到各个单元格", invalidCells);
+        ERROR && console.error("数据完整性检查. 无效城市", b, "被分配到各个单元格", invalidCells);
       });
 
       const invalidRivers = [...new Set(cells.r)].filter(r => r && !pack.rivers.find(river => river.i === r));
@@ -501,30 +501,30 @@ async function parseLoadedData(data) {
         if (burg.cell === undefined || burg.x === undefined || burg.y === undefined) {
           ERROR &&
             console.error(
-              `数据完整性检查. 城镇 ${burg.i} 没有单元格信息或坐标，移除了城镇`
+              `数据完整性检查. 城市 ${burg.i} 没有单元格信息或坐标，移除了城市`
             );
           burg.removed = true;
         }
 
         if (burg.port < 0) {
-          ERROR && console.error("数据完整性检查. 城镇", burg.i, "港口值无效", burg.port);
+          ERROR && console.error("数据完整性检查. 城市", burg.i, "港口值无效", burg.port);
           burg.port = 0;
         }
 
         if (burg.cell >= cells.i.length) {
-          ERROR && console.error("数据完整性检查. 城镇", burg.i, "链接到无效单元格", burg.cell);
+          ERROR && console.error("数据完整性检查. 城市", burg.i, "链接到无效单元格", burg.cell);
           burg.cell = findCell(burg.x, burg.y);
           cells.i.filter(i => cells.burg[i] === burg.i).forEach(i => (cells.burg[i] = 0));
           cells.burg[burg.cell] = burg.i;
         }
 
         if (burg.state && !pack.states[burg.state]) {
-          ERROR && console.error("数据完整性检查. 城镇", burg.i, "链接到无效状态", burg.state);
+          ERROR && console.error("数据完整性检查. 城市", burg.i, "链接到无效状态", burg.state);
           burg.state = 0;
         }
 
         if (burg.state === undefined) {
-          ERROR && console.error("数据完整性检查. 城镇", burg.i, "没有状态数据");
+          ERROR && console.error("数据完整性检查. 城市", burg.i, "没有状态数据");
           burg.state = 0;
         }
       });

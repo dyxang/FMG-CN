@@ -235,7 +235,7 @@ window.Submap = (function () {
       c.center = newCenters.length ? newCenters[0] : pack.cells.culture.findIndex(x => x === i);
     });
 
-    stage("移植和锁定城镇.");
+    stage("移植和锁定城市.");
     copyBurgs(parentMap, projection, options);
 
     // transfer states, mark states without land as removed.
@@ -390,7 +390,7 @@ window.Submap = (function () {
       if (searchFunc) {
         const [newCell, neighbor] = searchFunc(b.x, b.y);
         if (!newCell) {
-          WARN && console.warn(`无法重新安置城镇: ${b.name} 沉没和毁灭. :-(`);
+          WARN && console.warn(`无法重新安置城市: ${b.name} 沉没和毁灭. :-(`);
           b.cell = null;
           b.removed = true;
           return;

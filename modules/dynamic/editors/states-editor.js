@@ -12,7 +12,7 @@ export function open() {
   refreshStatesEditor();
 
   $("#statesEditor").dialog({
-    title: "States Editor",
+    title: "国家编辑器",
     resizable: false,
     close: closeStatesEditor,
     position: {my: "right top", at: "right-10 top+10", of: "svg", collision: "fit"}
@@ -22,16 +22,16 @@ export function open() {
 function insertEditorHtml() {
   const editorHtml = /* html */ `<div id="statesEditor" class="dialog stable">
     <div id="statesHeader" class="header" style="grid-template-columns: 11em 8em 7em 7em 6em 6em 8em 6em 7em 6em">
-      <div data-tip="单击此处可按国家名进行排序" class="sortable alphabetically" data-sortby="name">State&nbsp;</div>
-      <div data-tip="单击此处可按国家构成排序" class="sortable alphabetically" data-sortby="form">Form&nbsp;</div>
-      <div data-tip="单击可按首都排序" class="sortable alphabetically hide" data-sortby="capital">Capital&nbsp;</div>
-      <div data-tip="按国家主导文化排序" class="sortable alphabetically hide" data-sortby="culture">Culture&nbsp;</div>
-      <div data-tip="单击此处可按国家城镇数进行排序" class="sortable hide" data-sortby="burgs">Burgs&nbsp;</div>
-      <div data-tip="单击此处可按国家区域进行排序" class="sortable hide icon-sort-number-down" data-sortby="area">Area&nbsp;</div>
-      <div data-tip="单击此处可按国家人口进行排序" class="sortable hide" data-sortby="population">Population&nbsp;</div>
-      <div data-tip="单击此处可按国家类型排序" class="sortable alphabetically hidden show hide" data-sortby="type">Type&nbsp;</div>
-      <div data-tip="单击此处可按国家扩张排序" class="sortable hidden show hide" data-sortby="expansionism">Expansion&nbsp;</div>
-      <div data-tip="单击此处可按国家单元格计数进行排序" class="sortable hidden show hide" data-sortby="cells">Cells&nbsp;</div>
+      <div data-tip="单击此处可按国家名进行排序" class="sortable alphabetically" data-sortby="name">国家&nbsp;</div>
+      <div data-tip="单击此处可按国家构成排序" class="sortable alphabetically" data-sortby="form">政体&nbsp;</div>
+      <div data-tip="单击可按首都排序" class="sortable alphabetically hide" data-sortby="capital">首都&nbsp;</div>
+      <div data-tip="按国家主导文化排序" class="sortable alphabetically hide" data-sortby="culture">文化&nbsp;</div>
+      <div data-tip="单击此处可按国家城市数进行排序" class="sortable hide" data-sortby="burgs">城市&nbsp;</div>
+      <div data-tip="单击此处可按国家区域进行排序" class="sortable hide icon-sort-number-down" data-sortby="area">面积&nbsp;</div>
+      <div data-tip="单击此处可按国家人口进行排序" class="sortable hide" data-sortby="population">人口&nbsp;</div>
+      <div data-tip="单击此处可按国家类型排序" class="sortable alphabetically hidden show hide" data-sortby="type">类型&nbsp;</div>
+      <div data-tip="单击此处可按国家扩张排序" class="sortable hidden show hide" data-sortby="expansionism">扩张&nbsp;</div>
+      <div data-tip="单击此处可按国家单元格计数进行排序" class="sortable hidden show hide" data-sortby="cells">单元格&nbsp;</div>
     </div>
 
     <div id="statesBodySection" class="table" data-type="absolute"></div>
@@ -39,7 +39,7 @@ function insertEditorHtml() {
     <div id="statesFooter" class="totalLine">
       <div data-tip="国家数" style="margin-left: 5px">国家:&nbsp;<span id="statesFooterStates">0</span></div>
       <div data-tip="土地单元格总数" style="margin-left: 12px">单元格:&nbsp;<span id="statesFooterCells">0</span></div>
-      <div data-tip="总城镇数" style="margin-left: 12px">城镇:&nbsp;<span id="statesFooterBurgs">0</span></div>
+      <div data-tip="总城市数" style="margin-left: 12px">城市:&nbsp;<span id="statesFooterBurgs">0</span></div>
       <div data-tip="土地总面积" style="margin-left: 12px">土地面积:&nbsp;<span id="statesFooterArea">0</span></div>
       <div data-tip="总人口" style="margin-left: 12px">人口:&nbsp;<span id="statesFooterPopulation">0</span></div>
     </div>
@@ -228,8 +228,8 @@ function statesEditorAddLines() {
         <span class="icon-star-empty placeholder hide"></span>
         <input class="stateCapital placeholder hide" />
         <select class="stateCulture placeholder hide">${getCultureOptions(0)}</select>
-        <span data-tip="城镇计数" class="icon-dot-circled hide" style="padding-right: 1px"></span>
-        <div data-tip="城镇计数" class="stateBurgs hide">${s.burgs}</div>
+        <span data-tip="城市计数" class="icon-dot-circled hide" style="padding-right: 1px"></span>
+        <div data-tip="城市计数" class="stateBurgs hide">${s.burgs}</div>
         <span data-tip="中立地区" style="padding-right: 4px" class="icon-map-o hide"></span>
         <div data-tip="中立地区面积" class="stateArea hide" style="width: 6em">${si(area)} ${unit}</div>
         <span data-tip="${populationTip}" class="icon-male hide"></span>
@@ -273,8 +273,8 @@ function statesEditorAddLines() {
       <select data-tip="主流文化，点击更改" class="stateCulture hide">${getCultureOptions(
         s.culture
       )}</select>
-      <span data-tip="城镇计数" style="padding-right: 1px" class="icon-dot-circled hide"></span>
-      <div data-tip="城镇计数" class="stateBurgs hide">${s.burgs}</div>
+      <span data-tip="城市计数" style="padding-right: 1px" class="icon-dot-circled hide"></span>
+      <div data-tip="城市计数" class="stateBurgs hide">${s.burgs}</div>
       <span data-tip="国家面积" style="padding-right: 4px" class="icon-map-o hide"></span>
       <div data-tip="国家面积" class="stateArea hide" style="width: 6em">${si(area)} ${unit}</div>
       <span data-tip="${populationTip}" class="icon-male hide"></span>
@@ -729,7 +729,7 @@ function showStatesChart() {
     <option value="population">总人口</option>
     <option value="rural">农村人口</option>
     <option value="urban">城市人口</option>
-    <option value="burgs">城镇数量</option>
+    <option value="burgs">城市数量</option>
   </select>`;
   alertMessage.innerHTML += `<div id='statesInfo' class='chartInfo'>&#8205;</div>`;
 
@@ -792,7 +792,7 @@ function showStatesChart() {
         : option === "urban"
         ? "城市人口: " + si(urban)
         : option === "burgs"
-        ? "城镇数量: " + d.data.burgs
+        ? "城市数量: " + d.data.burgs
         : "人口: " + si(rural + urban);
 
     statesInfo.innerHTML = /* html */ `${state}. ${value}`;
@@ -1198,7 +1198,7 @@ function enterAddStateMode() {
   }
   customization = 3;
   this.classList.add("pressed");
-  tip("点击地图创建一个新的首都或推广一个现有的城镇", true);
+  tip("点击地图创建一个新的首都或推广一个现有的城市", true);
   viewbox.style("cursor", "crosshair").on("click", addState);
   $body.querySelectorAll("div > input, select, span, svg").forEach(e => (e.style.pointerEvents = "none"));
 }

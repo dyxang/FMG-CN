@@ -27,7 +27,7 @@ function insertEditorHtml() {
     <div id="culturesHeader" class="header" style="grid-template-columns: 10em 7em 8em 4em 8em 5em 8em 8em">
       <div data-tip="单击此处可按文化名称排序" class="sortable alphabetically" data-sortby="name">文化&nbsp;</div>
       <div data-tip="单击此处可按类型排序" class="sortable alphabetically" data-sortby="type">类型&nbsp;</div>
-      <div data-tip="单击此处可按文化命名库进行排序" class="sortable" data-sortby="base">名字库&nbsp;</div>
+      <div data-tip="单击此处可按文化命名库进行排序" class="sortable" data-sortby="base">名称库&nbsp;</div>
       <div data-tip="单击此处可按文化单元格计数进行排序" class="sortable hide" data-sortby="cells">单元格&nbsp;</div>
       <div data-tip="按扩张主义排序" class="sortable hide" data-sortby="expansionism">扩张&nbsp;</div>
       <div data-tip="单击此处可按文化面积进行排序" class="sortable hide" data-sortby="area">面积&nbsp;</div>
@@ -182,7 +182,7 @@ function culturesEditorAddLines() {
           <span data-tip="${populationTip}" class="icon-male hide"></span>
           <div data-tip="${populationTip}" class="culturePopulation hide pointer"
             style="width: 5em">${si(population)}</div>
-          <span data-tip="单击此处可重新生成已分配此文化的城镇的名称" class="icon-arrows-cw hide"></span>
+          <span data-tip="单击此处可重新生成已分配此文化的城市的名称" class="icon-arrows-cw hide"></span>
           ${getShapeOptions(selectShape, c.shield)}
         </div>`;
       continue;
@@ -226,7 +226,7 @@ function culturesEditorAddLines() {
         <span data-tip="${populationTip}" class="icon-male hide"></span>
         <div data-tip="${populationTip}" class="culturePopulation hide pointer"
           style="width: 5em">${si(population)}</div>
-        <span data-tip="单击此处可重新生成分配了此文化的城镇的名称" class="icon-arrows-cw hide"></span>
+        <span data-tip="单击此处可重新生成分配了此文化的城市的名称" class="icon-arrows-cw hide"></span>
         ${getShapeOptions(selectShape, c.shield)}
         <span data-tip="移除文化" class="icon-trash-empty hide"></span>
       </div>`;
@@ -512,7 +512,7 @@ function cultureRegenerateBurgs() {
     b.name = Names.getCulture(cultureId);
     labels.select("[data-id='" + b.i + "']").text(b.name);
   });
-  tip(`${cBurgs.length} 城镇的名字重生了`, false, "success");
+  tip(`${cBurgs.length} 城市的名字重生了`, false, "success");
 }
 
 function removeCulture(cultureId) {

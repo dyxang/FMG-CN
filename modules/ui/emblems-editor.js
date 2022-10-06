@@ -100,7 +100,7 @@ function editEmblem(type, id, el) {
     if (!el.coa) return;
     document.getElementById("emblemImage").setAttribute("href", "#" + id);
     let name = el.fullName || el.name;
-    if (type === "burg") name = "城镇的" + name;
+    if (type === "burg") name = "城市的" + name;
     document.getElementById("emblemArmiger").innerText = name;
 
     if (el.coa === "custom") emblemShapeSelector.disabled = true;
@@ -397,14 +397,14 @@ function editEmblem(type, id, el) {
             })
             .join("");
           if (stateBurgOutOfProvincesFigures)
-            stateBurgSections += `<div><h2>${state.fullName} 受直接控制的城镇</h2>${stateBurgOutOfProvincesFigures}</div>`;
+            stateBurgSections += `<div><h2>${state.fullName} 受直接控制的城市</h2>${stateBurgOutOfProvincesFigures}</div>`;
           return stateBurgSections;
         })
         .join("");
 
       const neutralBurgs = validBurgs.filter(b => !b.state);
       const neutralsSection = neutralBurgs.length
-        ? "<div><h2>独立的城镇</h2>" +
+        ? "<div><h2>独立的城市</h2>" +
           neutralBurgs
             .map(burg => {
               const el = document.getElementById("burgCOA" + burg.i);

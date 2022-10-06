@@ -175,9 +175,9 @@ function showMapTooltip(point, e, i, g) {
     if (tag === "text") return tip("拖动以移动，单击以移除测量器");
   }
 
-  if (subgroup === "burgIcons") return tip("单击以编辑城镇");
+  if (subgroup === "burgIcons") return tip("单击以编辑城市");
 
-  if (subgroup === "burgLabels") return tip("单击以编辑城镇");
+  if (subgroup === "burgLabels") return tip("单击以编辑城市");
 
   if (group === "lakes" && !land) {
     const lakeId = +e.target.dataset.f;

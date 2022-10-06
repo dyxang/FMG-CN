@@ -84,7 +84,7 @@ window.Cultures = (function () {
 
     // make sure all bases exist in nameBases
     if (!nameBases.length) {
-      ERROR && console.error("名字库为空，将应用默认的名字库");
+      ERROR && console.error("名称库为空，将应用默认的名称库");
       nameBases = Names.getNameBases();
     }
 

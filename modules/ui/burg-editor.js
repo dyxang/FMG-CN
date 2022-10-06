@@ -11,7 +11,7 @@ function editBurg(id) {
   updateBurgValues();
 
   $("#burgEditor").dialog({
-    title: "编辑城镇",
+    title: "编辑城市",
     resizable: false,
     close: closeBurgEditor,
     position: {my: "left top", at: "left+10 top+10", of: "svg", collision: "fit"}
@@ -282,12 +282,12 @@ function editBurg(id) {
     const capital = burgsToRemove.length < burgsInGroup.length;
 
     alertMessage.innerHTML = /* html */ `您确定要删除 ${
-      basic || capital ? "所有未解锁的城镇组元素" : "整个城镇组"
+      basic || capital ? "所有未解锁的城市组元素" : "整个城市组"
     }?
-      <br />请注意，不会删除大写或锁定的城镇. <br /><br />需要移除的城镇: ${burgsToRemove.length}`;
+      <br />请注意，不会删除大写或锁定的城市. <br /><br />需要移除的城市: ${burgsToRemove.length}`;
     $("#alert").dialog({
       resizable: false,
-      title: "移除城镇组",
+      title: "移除城市组",
       buttons: {
         Remove: function () {
           $(this).dialog("close");
@@ -433,7 +433,7 @@ function editBurg(id) {
   function addCustomMfcgLink() {
     const id = +elSelected.attr("data-id");
     const burg = pack.burgs[id];
-    const message = "输入指向城镇地图的自定义链接。它可以是一个链接到中世纪幻想城市生成器或其他工具。保持空白以使用 MFCG 种子";
+    const message = "输入指向城市地图的自定义链接。它可以是一个链接到中世纪幻想城市生成器或其他工具。保持空白以使用 MFCG 种子";
     prompt(message, {default: burg.link || "", required: false}, link => {
       if (link) burg.link = link;
       else delete burg.link;
@@ -458,7 +458,7 @@ function editBurg(id) {
     document.getElementById("burgRelocate").classList.toggle("pressed");
     if (document.getElementById("burgRelocate").classList.contains("pressed")) {
       viewbox.style("cursor", "crosshair").on("click", relocateBurgOnClick);
-      tip("点击地图重新定位城镇。按住 Shift 连续移动", true);
+      tip("点击地图重新定位城市。按住 Shift 连续移动", true);
       if (!layerIsOn("toggleCells")) {
         toggleCells();
         toggler.dataset.forced = true;
@@ -481,12 +481,12 @@ function editBurg(id) {
     const burg = pack.burgs[id];
 
     if (cells.h[cell] < 20) {
-      tip("无法将城镇放入水中! 请选择一个陆地单元格", false, "error");
+      tip("无法将城市放入水中! 请选择一个陆地单元格", false, "error");
       return;
     }
 
     if (cells.burg[cell] && cells.burg[cell] !== id) {
-      tip("这个单元格中已经有一个城镇。请选择一个空闲单元格", false, "error");
+      tip("这个单元格中已经有一个城市。请选择一个空闲单元格", false, "error");
       return;
     }
 
@@ -545,11 +545,11 @@ function editBurg(id) {
   function removeSelectedBurg() {
     const id = +elSelected.attr("data-id");
     if (pack.burgs[id].capital) {
-      alertMessage.innerHTML = /* html */ `你不能移除城镇，因为它是一个国家的首府.<br /><br />
-      您可以使用城镇编辑器更改首府 (shift + T)`;
+      alertMessage.innerHTML = /* html */ `你不能移除城市，因为它是一个国家的首府.<br /><br />
+      您可以使用城市编辑器更改首府 (shift + T)`;
       $("#alert").dialog({
         resizable: false,
-        title: "移除城镇",
+        title: "移除城市",
         buttons: {
           Ok: function () {
             $(this).dialog("close");
@@ -557,10 +557,10 @@ function editBurg(id) {
         }
       });
     } else {
-      alertMessage.innerHTML = "你确定要移除这个城镇吗?";
+      alertMessage.innerHTML = "你确定要移除这个城市吗?";
       $("#alert").dialog({
         resizable: false,
-        title: "移除城镇",
+        title: "移除城市",
         buttons: {
           Remove: function () {
             $(this).dialog("close");

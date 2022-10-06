@@ -64,8 +64,8 @@ window.Names = (function () {
 
     const data = chains[base];
     if (!data || data[""] === undefined) {
-      tip("名字库 " + base + " 是不正确的。请检入名称库编辑器", false, "error");
-      ERROR && console.error("名字库 " + base + " 是不正确的!");
+      tip("名称库 " + base + " 是不正确的。请检入名称库编辑器", false, "error");
+      ERROR && console.error("名称库 " + base + " 是不正确的!");
       return "ERROR";
     }
 
@@ -142,7 +142,7 @@ window.Names = (function () {
   // generate short name for base
   const getBaseShort = function (base) {
     if (nameBases[base] === undefined) {
-      tip(`名字库 ${base} 不存在。请在“文化编辑器”中上载更改基础的自定义名称库`, false, "error");
+      tip(`名称库 ${base} 不存在。请在“文化编辑器”中上载更改基础的自定义名称库`, false, "error");
       base = 1;
     }
     const min = nameBases[base].min - 1;
@@ -152,7 +152,7 @@ window.Names = (function () {
 
   // generate state name based on capital or random name and culture-specific suffix
   const getState = function (name, culture, base) {
-    if (name === undefined) return ERROR && console.error("请定义一个名字库");
+    if (name === undefined) return ERROR && console.error("请定义一个名称库");
     if (culture === undefined && base === undefined) return ERROR && console.error("请定义一个文化");
     if (base === undefined) base = pack.cultures[culture].base;
 
