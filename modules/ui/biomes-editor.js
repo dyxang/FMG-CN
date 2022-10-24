@@ -211,18 +211,18 @@ function editBiomes() {
 
     const wikiBase = "https://en.wikipedia.org/wiki/";
     const pages = {
-      "Hot desert": "Desert_climate#Hot_desert_climates",
-      "Cold desert": "Desert_climate#Cold_desert_climates",
-      Savanna: "Tropical_and_subtropical_grasslands,_savannas,_and_shrublands",
-      Grassland: "Temperate_grasslands,_savannas,_and_shrublands",
-      "Tropical seasonal forest": "Seasonal_tropical_forest",
-      "Temperate deciduous forest": "Temperate_deciduous_forest",
-      "Tropical rainforest": "Tropical_rainforest",
-      "Temperate rainforest": "Temperate_rainforest",
-      Taiga: "Taiga",
-      Tundra: "Tundra",
-      Glacier: "Glacier",
-      Wetland: "Wetland"
+      "热沙漠": "Desert_climate#Hot_desert_climates",
+      "冷沙漠": "Desert_climate#Cold_desert_climates",
+      "热带草原气候" : "Tropical_and_subtropical_grasslands,_savannas,_and_shrublands",
+      "草原气候" : "Temperate_grasslands,_savannas,_and_shrublands",
+      "热带季雨林": "Seasonal_tropical_forest",
+      "温带落叶林": "Temperate_deciduous_forest",
+      "热带雨林": "Tropical_rainforest",
+      "温带雨林": "Temperate_rainforest",
+      "北方针叶林" : "Taiga",
+      "苔原" : "Tundra",
+      "冰川" : "Glacier",
+      "湿地" : "Wetland"
     };
     const customBiomeLink = `https://en.wikipedia.org/w/index.php?search=${biomeName}`;
     const link = pages[biomeName] ? wikiBase + pages[biomeName] : customBiomeLink;

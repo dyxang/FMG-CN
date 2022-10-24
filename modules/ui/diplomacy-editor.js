@@ -16,39 +16,39 @@ function editDiplomacy() {
 
   const relations = {
     Ally: {
-      inText: "is an ally of",
+      inText: "盟友",
       color: "#00b300",
       tip: "同盟国达成防御协议，在第三方侵略的情况下相互保护"
     },
     Friendly: {
-      inText: "is friendly to",
+      inText: "友好",
       color: "#d4f8aa",
       tip: "当一个国家与另一个国家有共同利益时，这个国家对另一个国家是友好的"
     },
     Neutral: {
-      inText: "is neutral to",
+      inText: "中立",
       color: "#edeee8",
-      tip: "中性意味着状态关系既不是正的也不是负的"
+      tip: "中立意味着状态关系既不是正的也不是负的"
     },
     Suspicion: {
-      inText: "is suspicious of",
+      inText: "怀疑",
       color: "#eeafaa",
       tip: "怀疑意味着国家对另一个国家持谨慎的不信任态度"
     },
-    Enemy: {inText: "is at war with", color: "#e64b40", tip: "敌人是相互交战的国家"},
+    Enemy: {inText: "交战", color: "#e64b40", tip: "敌人是相互交战的国家"},
     Unknown: {
-      inText: "does not know about",
+      inText: "未知",
       color: "#a9a9a9",
       tip: "如果国家之间没有足够的相互信息，那么关系就是未知的"
     },
     Rival: {
-      inText: "is a rival of",
+      inText: "对抗",
       color: "#ad5a1f",
       tip: "竞争是一种在该地区争夺主导地位的状态"
     },
-    Vassal: {inText: "is a vassal of", color: "#87CEFA", tip: "附属国是对其领主负有义务的国家"},
+    Vassal: {inText: "附庸", color: "#87CEFA", tip: "附属国是对其领主负有义务的国家"},
     Suzerain: {
-      inText: "is suzerain to",
+      inText: "宗主",
       color: "#00008B",
       tip: "宗主国是一个对其附属国有一定控制权的国家"
     }
@@ -120,7 +120,7 @@ function editDiplomacy() {
       const relation = state.diplomacy[selectedId];
       const {color, inText} = relations[relation];
 
-      const tip = `${state.name} ${inText} ${selectedName}`;
+      const tip = `${state.name} 与 ${selectedName} 关系是: ${inText}`;
       const tipSelect = `${tip}. 点击查看关系 ${state.name}`;
       const tipChange = `点击更改关系. ${tip}`;
 

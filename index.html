@@ -2091,7 +2091,7 @@
         <div id="customizationMenu" class="tabcontent">
           <p>高度图自定义工具：</p>
           <div id="customizeTools">
-            <button data-tip="显示笔刷面板" id="paintBrushes">油漆刷</button>
+            <button data-tip="显示笔刷面板" id="paintBrushes">笔刷</button>
             <button data-tip="打开模板编辑器" id="applyTemplate" style="display: none">模板编辑器</button>
             <button data-tip="打开图像转换器" id="convertImage" style="display: none">图像转换器</button>
             <button data-tip="将高度图数据渲染为一个小的单色图像" id="heightmapPreview">预览</button>
@@ -3858,7 +3858,7 @@
           </div>
 
           <div data-tip="设置笔刷力度">
-            <div style="width: 3.2em; display: inline-block"><i>Power:</i></div>
+            <div style="width: 3.2em; display: inline-block"><i>力度:</i></div>
             <input
               id="brushPower"
               oninput="tip('笔刷力度：'+this.value); brushPowerNumber.value = this.value"
@@ -3880,7 +3880,7 @@
         </div>
 
         <div
-          data-tip="允许笔刷改变只有土地单元格，从而限制修改海岸线"
+          data-tip="只允许笔刷改变陆地单元格，从而限制修改海岸线"
           style="margin-bottom: 0.6em"
         >
           <input id="changeOnlyLand" class="checkbox" type="checkbox" />
@@ -3955,7 +3955,7 @@
             <option value="shattered">支离破碎</option>
             <option value="taklamakan">塔克拉玛干</option>
             <option value="oldWorld">旧世界</option>
-            <option value="fractious">Fractious</option>
+            <option value="fractious"> </option>
           </select>
         </div>
         <div id="templateTools">
@@ -4323,7 +4323,7 @@
             省会&nbsp;
           </div>
           <div data-tip="单击此处可按省所有者进行排序" class="sortable alphabetically" data-sortby="state">
-            省拥有&nbsp;
+            从属&nbsp;
           </div>
           <div data-tip="按省区分类" class="sortable hide" data-sortby="area">地区&nbsp;</div>
           <div data-tip="按省份人口点击排序" class="sortable hide" data-sortby="population">
@@ -5782,7 +5782,7 @@
 
           <select id="loadFromDropboxSelect" style="width: 22em"></select>
           <div id="loadFromDropboxButtons" style="margin-bottom: 0.6em">
-            <button onclick="loadFromDropbox()" data-tip="从 Dropbox 加载.map 文件">装弹</button>
+            <button onclick="loadFromDropbox()" data-tip="从 Dropbox 加载.map 文件">导入</button>
             <button
               onclick="createSharableDropboxLink()"
               data-tip="选择文件并创建一个链接与您的朋友共享"
