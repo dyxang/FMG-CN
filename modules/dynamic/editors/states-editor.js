@@ -196,7 +196,7 @@ function statesEditorAddLines() {
     const population = rn(rural + urban);
     const populationTip = `Total population: ${si(population)}; Rural population: ${si(rural)}; Urban population: ${si(
       urban
-    )}. Click to change`;
+    )}. 点击更改`;
     totalArea += area;
     totalPopulation += population;
     totalBurgs += s.burgs;

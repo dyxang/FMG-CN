@@ -116,7 +116,7 @@ function showMapTooltip(point, e, i, g) {
   const land = pack.cells.h[i] >= 20;
 
   // specific elements
-  if (group === "armies") return tip(e.target.parentNode.dataset.name + ". Click to edit");
+  if (group === "armies") return tip(e.target.parentNode.dataset.name + ". 点击编辑");
 
   if (group === "emblems" && e.target.tagName === "use") {
     const parent = e.target.parentNode;
@@ -141,7 +141,7 @@ function showMapTooltip(point, e, i, g) {
     const river = +e.target.id.slice(5);
     const r = pack.rivers.find(r => r.i === river);
     const name = r ? r.name + " " + r.type : "";
-    tip(name + ". Click to edit");
+    tip(name + ". 点击编辑");
     if (riversOverview?.offsetParent) highlightEditorLine(riversOverview, river, 5000);
     return;
   }
@@ -195,7 +195,7 @@ function showMapTooltip(point, e, i, g) {
     return;
   }
 
-  if (group === "ice") return tip("Click to edit the Ice");
+  if (group === "ice") return tip("点击编辑冰层");
 
   // covering elements
   if (layerIsOn("togglePrec") && land) tip("年降水量: " + getFriendlyPrecipitation(i));

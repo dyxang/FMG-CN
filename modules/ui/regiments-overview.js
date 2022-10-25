@@ -37,7 +37,7 @@ function overviewRegiments(state) {
     const insert = html => document.getElementById("regimentsTotal").insertAdjacentHTML("beforebegin", html);
     for (const u of options.military) {
       const label = capitalize(u.name.replace(/_/g, " "));
-      insert(`<div data-tip="军团 ${u.name} 单位编号. 单击以进行排序" class="sortable removable" data-sortby="${u.name}">${label}&nbsp;</div>`);
+      insert(`<div data-tip="军团 ${u.name} 单位数量. 单击以进行排序" class="sortable removable" data-sortby="${u.name}">${label}&nbsp;</div>`);
     }
     header.querySelectorAll(".removable").forEach(function (e) {
       e.addEventListener("click", function () {
@@ -60,7 +60,7 @@ function overviewRegiments(state) {
       for (const r of s.military) {
         const sortData = options.military.map(u => `data-${u.name}=${r.u[u.name] || 0}`).join(" ");
         const lineData = options.military
-          .map(u => `<div data-type="${u.name}" data-tip="${capitalize(u.name)} 单位编号">${r.u[u.name] || 0}</div>`)
+          .map(u => `<div data-type="${u.name}" data-tip="${capitalize(u.name)} 单位数量">${r.u[u.name] || 0}</div>`)
           .join(" ");
 
         lines += /* html */ `<div class="states" data-id=${r.i} data-s="${s.i}" data-state="${s.name}" data-name="${r.name}" ${sortData} data-total="${r.a}">
@@ -69,7 +69,7 @@ function overviewRegiments(state) {
           <span data-tip="团徽" style="width:1em">${r.icon}</span>
           <input data-tip="团名" style="width:13em" value="${r.name}" readonly />
           ${lineData}
-          <div data-type="total" data-tip="军事人员总数(不包括船员)" style="font-weight: bold">${r.a}</div>
+          <div data-type="total" data-tip="军事人员总数(不包括组员（Crew）)" style="font-weight: bold">${r.a}</div>
           <span data-tip="编辑团" onclick="editRegiment('#regiment${s.i}-${r.i}')" class="icon-pencil pointer"></span>
         </div>`;
 

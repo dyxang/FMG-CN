@@ -54,7 +54,7 @@ function overviewMilitary() {
     const insert = html => document.getElementById("militaryTotal").insertAdjacentHTML("beforebegin", html);
     for (const u of options.military) {
       const label = capitalize(u.name.replace(/_/g, " "));
-      insert(`<div data-tip="国家 ${u.name} 单位编号. 单击以进行排序" class="sortable removable" data-sortby="${u.name}">${label}&nbsp;</div>`);
+      insert(`<div data-tip="国家 ${u.name} 单位数量. 单击以进行排序" class="sortable removable" data-sortby="${u.name}">${label}&nbsp;</div>`);
     }
     header.querySelectorAll(".removable").forEach(function (e) {
       e.addEventListener("click", function () {
@@ -76,7 +76,7 @@ function overviewMilitary() {
       const rate = (total / population) * 100;
 
       const sortData = options.military.map(u => `data-${u.name}="${getForces(u)}"`).join(" ");
-      const lineData = options.military.map(u => `<div data-type="${u.name}" data-tip="国家 ${u.name} 单位编号">${getForces(u)}</div>`).join(" ");
+      const lineData = options.military.map(u => `<div data-type="${u.name}" data-tip="国家 ${u.name} 单位数量">${getForces(u)}</div>`).join(" ");
 
       lines += /* html */ `<div
         class="states"
@@ -91,7 +91,7 @@ function overviewMilitary() {
         <fill-box data-tip="${s.fullName}" fill="${s.color}" disabled></fill-box>
         <input data-tip="${s.fullName}" style="width:6em" value="${s.name}" readonly />
         ${lineData}
-        <div data-type="total" data-tip="国家军事人员总数 (考虑到船员)" style="font-weight: bold">${si(total)}</div>
+        <div data-type="total" data-tip="国家军事人员总数 (考虑到组员（Crew）)" style="font-weight: bold">${si(total)}</div>
         <div data-type="population" data-tip="国家人口">${si(population)}</div>
         <div data-type="rate" data-tip="军事人员比率(国家人口的百分比)。取决于战争警报">${rn(rate, 2)}%</div>
         <input
@@ -313,7 +313,7 @@ function overviewMilitary() {
         <td>${getLimitButton("religions")}</td>
         <td><input data-tip="输入农村人口的征兵百分比" type="number" min="0" max="100" step=".01" value="${rural}" /></td>
         <td><input data-tip="输入城市人口的征兵百分比" type="number" min="0" max="100" step=".01" value="${urban}" /></td>
-        <td><input data-tip="输入船员的平均人数(用于计算总人数)" type="number" min="1" step="1" value="${crew}" /></td>
+        <td><input data-tip="输入组员（Crew）的平均人数(用于计算总人数)" type="number" min="1" step="1" value="${crew}" /></td>
         <td><input data-tip="输入军事力量(用于战斗模拟)" type="number" min="0" step=".1" value="${power}" /></td>
         <td>
           <select data-tip="选择单位类型，以适用于力重新计算的特殊规则">

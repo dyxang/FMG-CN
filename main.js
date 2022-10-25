@@ -122,8 +122,8 @@ fogging.append("rect").attr("x", 0).attr("y", 0).attr("width", "100%").attr("hei
 fogging.append("rect").attr("x", 0).attr("y", 0).attr("width", "100%").attr("height", "100%").attr("fill", "#e8f0f6").attr("filter", "url(#splotch)");
 
 // assign events separately as not a viewbox child
-scaleBar.on("mousemove", () => tip("Click to open Units Editor")).on("click", () => editUnits());
-legend.on("mousemove", () => tip("Drag to change the position. Click to hide the legend")).on("click", () => clearLegend());
+scaleBar.on("mousemove", () => tip("点击打开单位编辑器")).on("click", () => editUnits());
+legend.on("mousemove", () => tip("拖动来改变位置。单击以隐藏图例")).on("click", () => clearLegend());
 
 // main data variables
 let grid = {}; // initial graph based on jittered square grid and data

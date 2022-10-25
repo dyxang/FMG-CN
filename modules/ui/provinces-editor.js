@@ -148,7 +148,7 @@ function editProvinces() {
         <input data-tip="省级表单名称。单击可更改" class="name pointer hide" value="${p.formName}" readonly />
         <span data-tip="省会。点击放大查看" class="icon-star-empty pointer hide ${p.burg ? "" : "placeholder"}"></span>
         <select
-          data-tip="省会。单击此处可从国家内的市镇中进行选择。没有首都就意味着该省由国家首都管辖
+          data-tip="省会。单击此处可从国家内的市镇中进行选择。没有首都就意味着该省由国家首都管辖"
           class="cultureBase hide ${p.burgs.length ? "" : "placeholder"}"
         >
           ${p.burgs.length ? getCapitalOptions(p.burgs, p.burg) : ""}
