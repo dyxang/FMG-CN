@@ -51,7 +51,7 @@ function overviewMarkers() {
     const lines = pack.markers
       .map(({i, type, icon, pinned, lock}) => {
         return `<div class="states" data-i=${i} data-type="${type}">
-        <div data-tip="Marker icon and type" style="width:12em">${icon} ${type}</div>
+        <div data-tip="标记图标和类型" style="width:12em">${icon} ${type}</div>
         <span style="padding-right:.1em" data-tip="编辑标记" class="icon-pencil"></span>
         <span style="padding-right:.1em" data-tip="注意标记位置" class="icon-dot-circled pointer"></span>
         <span style="padding-right:.1em" data-tip="Pin 标记(只显示 Pin 标记)" class="icon-pin ${pinned ? "" : "inactive"}" pointer"></span>
