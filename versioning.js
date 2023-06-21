@@ -1,7 +1,7 @@
 "use strict";
 
 // version and caching control
-const version = "1.87.09"; // generator version, update each time
+const version = "1.87.10"; // generator version, update each time
 
 {
   document.title += " v" + version;
@@ -23,24 +23,9 @@ const version = "1.87.09"; // generator version, update each time
     const discord = "https://discordapp.com/invite/X7E84HU";
     const patreon = "https://www.patreon.com/azgaar";
 
-    alertMessage.innerHTML = /* html */ `The Fantasy Map Generator is updated up to version <strong>${version}</strong>. This version is compatible with <a href="${changelog}" target="_blank">previous versions</a>, loaded <i>.map</i> files will be auto-updated.
+    alertMessage.innerHTML = /* html */ `<strong>这是一次假更新，目的是给所有用1.8汉化版本的使用者提个醒，具体内容请到哔哩哔哩搜索BV1pz4y1H7eD或<a href="https://www.bilibili.com/video/BV1pz4y1H7eD/" target="_blank">点击此链接</a>,注：假更新后版本号为1.87.10</strong>
       ${storedVersion ? "<span>Reload the page to fetch fresh code.</span>" : ""}
-
-      <ul>
-        <strong>Latest changes:</strong>
-        <li>Data Charts screen</li>
-        <li>Сultures and religions can have multiple parents in hierarchy tree</li>
-        <li>Heightmap selection screen</li>
-        <li>Dialogs optimization for mobile</li>
-        <li>New heightmap template: Fractious</li>
-        <li>Template Editor: mask and invert tools</li>
-        <li>Ability to install the App</li>
-        <li>14 new default fonts</li>
-        <li>Caching for faster startup</li>
-      </ul>
-
-      <p>Join our <a href="${discord}" target="_blank">Discord server</a> and <a href="${reddit}" target="_blank">Reddit community</a> to ask questions, share maps, discuss the Generator and Worlbuilding, report bugs and propose new features.</p>
-      <span><i>Thanks for all supporters on <a href="${patreon}" target="_blank">Patreon</a>!</i></span>`;
+`;
 
     const buttons = {
       Ok: function () {
@@ -60,7 +45,7 @@ const version = "1.87.09"; // generator version, update each time
 
     $("#alert").dialog({
       resizable: false,
-      title: "Fantasy Map Generator update",
+      title: "所有使用者请注意！",
       width: "28em",
       position: {my: "center center-4em", at: "center", of: "svg"},
       buttons
